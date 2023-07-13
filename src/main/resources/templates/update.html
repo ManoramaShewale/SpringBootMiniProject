@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            padding: 50px 100px;
+            padding: 100px;
+            margin: 50px 500px;
+            background-color: white;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+
+
+
+        }
+
+        .submit {
+            margin-top: 30px;
+            margin-left: 30px;
+            width: 200px;
+            border-radius: 5px;
+            background-color: brown;
+        }
+
+        input {
+            width: 250px;
+            height: 30px;
+            font-size: medium;
+            /* font-size: 1000%; */
+
+
+        }
+
+        label {
+
+            width: 250px;
+            height: 30px;
+            font-size: 120%;
+        }
+
+        form {
+            line-height: 30px;
+        }
+
+        /* h1{
+    padding-top: 50px;
+    text-align: center;
+    color:blueviolet;
+} */
+
+        body {
+            background-image: url("https://wp-media.petersons.com/blog/wp-content/uploads/2017/11/10123526/j-kelly-brito-256889-unsplash-1.jpg");
+    
+             background-size: 1695px; 
+       
+                 
+}
+
+        header {
+            padding-top: 50px;
+            text-align: center;
+            color: brown;
+
+            /* font-size: 50px; */
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Updated Information</h1>
+    </header>
+    <section class="container">
+        <form th:action="@{/update}" method="post" th:object="${updatedata}">
+
+            <input type="hidden" name="id" th:value="${updatedata.id}">
+            <td>
+                <tr>
+                    <label id="name" class="name">Name: </label>
+                    <input type="text" id="name" class="name" name="name" th:value="${updatedata.name}"
+                        placeholder="Update Your Name" />
+                </tr>
+                <tr>
+                    <label id="email" class="email">Email: </label>
+                    <input type="text" id="email" class="email" name="email" th:value="${updatedata.email}"
+                        placeholder="update Email ID" />
+                </tr>
+            </td>
+            <input type="submit" value="Update" class="submit" />
+
+        </form>
+    </section>
+</body>
+
+</html>

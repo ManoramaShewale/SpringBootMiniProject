@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        .container{
+    padding:50px 100px;
+    padding: 100px;
+    margin: 50px 500px;
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    position: absolute ;
+    
+    
+
+}
+.submit{
+   margin-top: 30px;
+   margin-left: 30px;
+   width: 200px;
+   border-radius: 5px;
+   background-color: brown;
+  
+}
+
+input{
+    width: 250px;
+    height: 30px; 
+    font-size: medium;
+   
+    
+}
+label{
+    width: 250px;
+    height: 30px; 
+    font-size: 120%;
+   
+    
+}
+
+form{
+    line-height: 30px;
+}
+
+h1{
+    padding-top: 50px;
+    text-align: center;
+    color:brown;
+ 
+}
+
+body{
+background-image: url("https://dypatiluniversityonline.com/assets/img/login-bg.jpg");  
+
+
+}
+
+    </style>    
+</head>
+
+<body>
+    <h1>Dr. DY. Patil Engineering Online Learing</h1>
+    
+   
+   
+    
+    <section class="container">
+    
+        <form action="#"  th:action="@{/welcome}" method="post" >
+            <!-- <form action="welcome"   method="post" ></form> -->
+            <table>
+                <td>
+
+                <label id="name" class="name" >Name :</label><br>
+                 <input type="text" id="name" class="name" name="name" placeholder="Enter your name" required/><br>
+                 
+                    <!-- <tr>Name: </tr>
+                    <input type="text" id="name" name="Name" > -->
+
+                <label id="email" class="email">Email :</label><br>
+                <input type="text" id="email" class="email" name="email" placeholder="Enter your email" required /><br>    
+                    <!-- <tr> Email: </tr>
+                    <input type="text" id="email" name="Email"> -->
+                    <input type="submit" value="Submit" class="submit" />
+
+                </td>
+
+               
+            
+                <!-- <input type="submit" value="submit" class="submit" /> -->
+           
+            </table>
+        </form>
+    </section>
+
+</body>
+
+</html>

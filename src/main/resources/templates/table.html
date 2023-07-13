@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+    <html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <style>
+    .input-group .form-control {
+      margin-right: 10px; 
+    }
+
+    .table {
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="#"  th:action="@{/welcome}" method="post" ></form>
+    <!-- <form action="welcome" method="post"> -->
+        
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <ul class="navbar-nav">
+        <li class="nav-item"> 
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Test1">Add Info</a>
+          <!-- <a class="nav-link" href="/hello">Add Book</a> -->
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="#">Pricing</a> -->
+        </li>
+      </ul>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <form class="form-inline">
+            <div class="input-group">
+              <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+              </div>
+            </div>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="table">
+    <table class="table table-striped table-hover table-borderless table-primary align-middle">
+      <thead class="table_head">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="table_tbody">
+        <tr class="table-primary" th:each="d: ${data}">
+          <td scope="row"><p th:text="${d.id}"></p></td>
+          <td><p th:text="${d.Name}"></p></td>
+          <td><p th:text="${d.Email}"></p></td>
+          <td>
+            <!-- <a name="" id="" class="btn btn-primary" href="#" role="button">Edit</a> -->
+            <!-- <a name="" id="" class="btn btn-danger" href="#" role="button">Delete</a> -->
+            <a name="" id="" class="btn btn-danger" th:href="@{/update/{id}(id=${d.id})}" role="button" >Edit</a>
+            <a name="" id="" class="btn btn-danger" th:href="@{/deletedata/{id}(id=${d.id})}" role="button" >Delete</a>
+            
+
+            <!-- <a th:href="@{'/tutorials/' + ${tutorial.id}}" title="Edit this tutorial"
+    class="fa-regular fa-pen-to-square icon-dark"></a> -->
+          </td>
+          
+        </tr>
+        
+      </tbody>
+      <tfoot>
+
+      </tfoot>
+    </table>
+  </div>
+
+
+</body>
+
+</html>
